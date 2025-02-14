@@ -1,0 +1,190 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Akku 🎉</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6f2;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #ff4081;
+        }
+
+        h2 {
+            color: #d6336c;
+            margin-top: 30px;
+        }
+
+        .photo-box {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .photo-box img {
+            width: 300px;
+            border-radius: 10px;
+            border: 2px solid #ff7eb3;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .fun-section, .game-section {
+            margin-top: 40px;
+            padding: 15px;
+            background-color: #ff99cc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .fun-button, .balloon, .candle-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .fun-button:hover, .balloon:hover, .candle-button:hover {
+            background-color: #d6336c;
+        }
+
+        #message {
+            font-size: 18px;
+            margin-top: 10px;
+            color: #444;
+        }
+
+        .balloon {
+            display: inline-block;
+            margin: 10px;
+            padding: 20px;
+            font-size: 20px;
+            border-radius: 50%;
+            background-color: #ff4081;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .balloon:hover {
+            transform: scale(1.1);
+        }
+
+        /* Candle & Cake Styling */
+        .cake-box {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .cake {
+            display: inline-block;
+            width: 100px;
+            height: 60px;
+            background-color: #ffcc66;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .candle {
+            width: 10px;
+            height: 30px;
+            background-color: red;
+            position: absolute;
+            top: -30px;
+            left: 45px;
+            border-radius: 3px;
+        }
+
+        .flame {
+            width: 8px;
+            height: 15px;
+            background-color: orange;
+            position: absolute;
+            top: -15px;
+            left: 1px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Birthday Song -->
+    <audio autoplay loop>
+        <source src="birthday-song.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <h1>🎂 Happy Birthday Akku 💖</h1>
+    <p>Wishing you a day filled with love, laughter, and all the happiness in the world! 🌸</p>
+
+    <!-- Special Picture -->
+    <div class="photo-box">
+        <img src="special-photo.jpg" alt="Special Memory">
+    </div>
+
+    <!-- Blow the Candle -->
+    <h2>🕯 Blow Out the Candle!</h2>
+    <div class="cake-box">
+        <div class="cake">
+            <div class="candle">
+                <div id="flame" class="flame"></div>
+            </div>
+        </div>
+    </div>
+    <button class="candle-button" onclick="blowCandle()">Blow the Candle! 💨</button>
+
+    <!-- Fun Surprise Message -->
+    <h2>🎮 Fun Surprise!</h2>
+    <div class="fun-section">
+        <button class="fun-button" onclick="showMessage()">Click for a Surprise Message 💕</button>
+        <p id="message"></p>
+    </div>
+
+    <!-- Balloon Pop Game -->
+    <h2>🎈 Balloon Pop Game!</h2>
+    <div class="game-section">
+        <p>Click a balloon to reveal a message! 🎊</p>
+        <div class="balloon" onclick="showBalloonMessage(0)">🎈</div>
+        <div class="balloon" onclick="showBalloonMessage(1)">🎈</div>
+        <div class="balloon" onclick="showBalloonMessage(2)">🎈</div>
+    </div>
+
+    <script>
+        function showMessage() {
+            const messages = [
+                "You are the best sister in the world! ❤️",
+                "Your smile makes everything better! 😊",
+                "May this year bring you all the success and happiness! 🎉",
+                "Love you forever, sis! 💖",
+                "Happy Birthday! You're truly one of a kind! ✨"
+            ];
+            let randomMsg = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("message").innerText = randomMsg;
+        }
+
+        function showBalloonMessage(index) {
+            const balloonMessages = [
+                "🎁 Akku oru monna 🤗",
+                "🌟 Akku oru double monna ✨",
+                "🎂 Akku oru triple monna🍰"
+            ];
+            alert(balloonMessages[index]);
+        }
+
+        function blowCandle() {
+            document.getElementById("flame").style.display = "none";
+            alert("🎉 You blew out the candle! Make a wish! 💖");
+        }
+    </script>
+
+</body>
+</html>
+
